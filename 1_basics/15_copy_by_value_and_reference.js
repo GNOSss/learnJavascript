@@ -56,3 +56,37 @@ let a = {number : 888, number2 : 777}; //자바스크립트에서 객체는 참�
 let b = {number : 888, number2 : 777}; // false, Object의 값들이 같다고해도 메모리 영역이 달라서 ? false
 console.log('a === b:', a === b);   // 'a === b' 이건 지금 코드에서는 값을 비교하는게 아닌 메모리 주소를 비교하는 것 
 
+
+console.log('-------------');
+const riNa55 = {
+    name : '리나',
+    group : '에스파',
+}
+
+const riNa555 = riNa55;
+
+const riNa5555 = {
+    name : '리나',
+    group : '에스파',
+}
+
+console.log(riNa55 === riNa555); //true >> copy by reference : 참조의 전달
+console.log(riNa55 === riNa5555); //false >> 메모리 주소가 다름
+console.log(riNa555 === riNa5555); //false >> 메모리 주소가 다름
+
+console.log('------Spread Operator-------');
+/**
+ * Spread Operator >> copy by value;
+ */
+
+const riNa5252 = {
+    ...riNa5555,
+};
+console.log(riNa5252);
+console.log(riNa5252 === riNa5555); //값에 의한 전달임 , 데이터 값이 복사되어 들어가는 것
+
+const riNa52 = {
+    freind : '윈터',  // Spread Operator 사용하면서 데이터 추가도 가능, 
+    ...riNa5252 // Spread Operator 순서에 따라 키값의 중복에 대해서 덮어씌워지거나 안되거나 함
+};
+console.log(riNa52);
