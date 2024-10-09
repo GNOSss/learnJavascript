@@ -71,4 +71,30 @@ runner();
 // }
 
 
-// new State() 
+// // new State() 
+// const useState (매개변수, ) {
+//     let int =  매개변수;
+//     const getter = () => int;
+//     const setter = (함수를받았다) => {
+//         if (!함수를받았다) 
+
+//         return int
+
+//         return 함수를받았다
+//     }
+
+//     return [getter, setter] 
+// }   
+
+
+// let [글제목, 글제목변경] = useState([ 1, 2, 3, 4, 5])
+// 글제목변경()
+
+// (prev) => { 
+//     for (let i; i<= prev.length; i++) { 
+//         return prev[i]
+//     }
+
+// }
+
+// console.log(글제목) // 1, 2, 3, 4, 5
