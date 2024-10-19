@@ -1,28 +1,27 @@
 /*
-* Variables 변수 선언
-* 1) var -
-* 2) let -
-* 3) const -
-*/
+ * Variables 변수 선언
+ * 1) var -
+ * 2) let -
+ * 3) const -
+ */
 
-var name = 'SSS';
+var name = "SSS";
 console.log(name);
-
 
 var age = 23;
 console.log(age);
 
-let house = 'ddddd';
+let house = "ddddd";
 console.log(house);
 
 // var,let은 구조체가 아님
 // 선언 이후 변경 가능
 
 // 15번째 줄 let house 선언을 이미 했고, 밑에 줄은 데이터 값을 변경했음
-house = 'vipvip';
+house = "vipvip";
 console.log(house);
 
-const newJeans = '뉴진스';
+const newJeans = "뉴진스";
 console.log(newJeans);
 
 /* 이미 const newJeans를 선언하고 '뉴진스'라는 값을 할당했음, 업데이트 불가능
