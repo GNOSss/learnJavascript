@@ -28,7 +28,7 @@ class FemaleIdolModel extends IdolModel {   // extends 기능으로 FemaleIdolMo
         this.part = part;   // 4. 3번의 argument를 part에 할당
     }
 
-    sayHello(){  // *** Override : 부모 클래스의 sayHello()를 override
+    sayHello(){  // *** Override : 부모 클래스의 sayHello()를 override >> 즉, 부모클래스의 sayHello()를 자식클래스의 sayHello()가 덮어버림
         // ${super.name} 사용 시 undefined 출력됨.
         // 자바스크립트에 클래스의 인스턴스(객체)의 프로퍼티(속성들)은 `this`키워드를 통해 접근한다고 함.
         // `super`키워드는 주로 부모 클래스의 메서드를 호출할 때 사용되며, 직접적으로 부모 클래스의 프로퍼티(속성)에 접근하는 데 사용되지 않는다.

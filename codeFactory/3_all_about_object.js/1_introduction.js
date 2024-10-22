@@ -1,6 +1,6 @@
 /**
  * All about objects
- * 
+ *
  * 객체를 선언할때 사용할 수 있는 방법들
  * 1) object를 생성해서 객체 생성 - 기본기 {}
  * 2) class를 인스턴스화해서 생성 -  class and oop
@@ -36,38 +36,38 @@ rina4는 팩토리 함수를 new 키워드와 함께 사용했지만, 함수가 
 
 // 1) object를 생성해서 객체 생성
 const rina = {
-    name : '카리나',
-    age : 22,
+  name: "카리나",
+  age: 22,
 };
-console.log(rina);  // {name: '카리나', age: 22}
+console.log(rina); // {name: '카리나', age: 22}
 
 // 2) class를 생성해서 객체 생성
 class IdolModel {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
 }
-console.log(new IdolModel('카리나', 22));   // undefined
+console.log(new IdolModel("카리나", 22)); // undefined
 
 // 3) function을 사용하여 객체 생성
 
 // 3-1) 생성자함수, this키워드와 new키워드를 같이 사용한다.
 function createIdol(name, age) {
-    this.name = name;
-    this.age = age;
+  this.name = name;
+  this.age = age;
 }
 
 // 3-2) 팩토리함수, 함수가 객체를 직접 반환하므로 정상적으로 객체는 생성됨
 function createIdol2(name, age) {
-    name = name;
-    age = age;
-    return {name, age};
+  name = name;
+  age = age;
+  return { name, age };
 }
 
-const rina2 = new createIdol('카리나', 22); // function문에 `this`를 사용해야지 new 키워드 가능
-const rina3 = createIdol('카카리나',22);
-const rina4 = new createIdol2('카리나', 22);
+const rina2 = new createIdol("카리나", 22); // function문에 `this`를 사용해야지 new 키워드 가능
+const rina3 = createIdol("카카리나", 22);
+const rina4 = new createIdol2("카리나", 22);
 
 console.log(rina2); // 생성자함수
 console.log(rina3); // undefined
