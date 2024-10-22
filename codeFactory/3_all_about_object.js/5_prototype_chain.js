@@ -42,10 +42,12 @@ console.log(yuJin.__proto__ === IdolModel.prototype); // true, yujin이라는 �
 
 console.log(testObj.__proto__ === Object.prototype); // true
 
-console.dir(yuJin.__proto__);
-console.dir(yuJin.prototype);
-console.dir(IdolModel.__proto__);
-console.dir(IdolModel.prototype);
+console.log("--------------------------------");
+
+console.dir(yuJin.__proto__, { showHidden: true });
+console.dir(yuJin.prototype); // undefined
+console.dir(IdolModel.__proto__); // {}
+console.dir(IdolModel.prototype); // {}
 
 console.dir(IdolModel.__proto__, {
   showHidden: true,
@@ -53,4 +55,30 @@ console.dir(IdolModel.__proto__, {
 
 console.log("--------------------------------");
 
-console.dir(IdolModel.prototype.__proto__, { showHidden: true });
+console.dir(
+  IdolModel.prototype.__proto__ //{ showHidden: true });
+);
+
+console.log("--------------------------------");
+
+console.log(IdolModel.__proto__ === Function.prototype); // true , IdolModel의 부모는 Function 이고 (?)
+console.log(Function.prototype.__proto__ === Object.prototype); // true  , Function.prototype의 부모는 Object다 (?)
+console.log(IdolModel.prototype.__proto__ === Object.prototype); // true , IdolModel의 prototype이 갖고 있는 __proto__ 는 Object.prototype과 같다
+console.log(IdolModel.__proto__ === Object.prototype); //  false , 그러나 위의 예제와 달리 IdolModel의 __proto__는 Object.prototype과 다르다.
+
+// 야매 팁 : __proto__는 상위 객체의 prototype을 찾아감 (ex 인스턴스 객체 > 자식클래스 > 부모클래스 > Function > Object) [부모의 상속 체인]
+// 야매 팁 : prototype은 상위 객체의 prototype의 constructor를 바라보나 (?)
+
+console.log("--------------------------------");
+
+const GNOS = new IdolModel("GNOS", 1993);
+
+console.log(GNOS.toString()); /* [object Object] 출력이됨 , 
+이말은 GNOS이 .toString이 없다면 Error , not defined를 했어야했는데 .. GNOS이라는 객체는 .toString을 갖고 있으니 [object Object] 반환했던것 */
+
+console.log(
+  Object.prototype.toString()
+); /*[object Object] 출력, 즉 인스턴스 객체의 __proto__는 class의 prototype을 상속받고 , 
+또 Function, Object의 prototype을 상속받기에 Object prototype에 존재하는 메소드들을 접근할 수 있다 (?) */
+
+// 코드 내용이 많아 새로운 페이지 만들어 버리겠음
