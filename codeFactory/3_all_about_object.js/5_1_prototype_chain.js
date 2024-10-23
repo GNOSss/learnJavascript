@@ -66,3 +66,21 @@ Person.hasMyCar = function (name) {
 };
 
 console.log(Person.hasMyCar(COCO.name)); //
+
+// Overriding
+
+function IdolModel4(name, year) {
+  this.name = name;
+  this.year = year;
+
+  this.sayHello = function () {
+    return `안녕하세요 저는 인스턴스 메서드 입니다.`;
+  };
+}
+
+IdolModel4.prototype.sayHello = function () {
+  return `안하세요! 아이돌4의 ${this.name}입니다.`;
+};
+
+const GNOS4 = new IdolModel4("GNOSS", "1995");
+console.log(GNOS4.sayHello()); // 77번째 코드가 나옴. 즉 외부에 프로토타입 메서드 만들어도 생성자함수에 정의한게 덮어씌워진다.
