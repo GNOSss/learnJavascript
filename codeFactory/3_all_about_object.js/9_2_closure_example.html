@@ -1,0 +1,25 @@
+<script>
+  function getNumber() {
+    var number = 5;
+
+    function innerGetNumber() {
+      return number;
+    }
+
+    return innerGetNumber;
+  }
+
+  var runner = getNumber();
+
+  console.log(runner());
+</script>
+
+/* closure 예제입니다. runner변수에 getNumber()함수를 실행시킨 뒤, return으로
+innerGetNumber함수를 받습니다 여기서 innerGetNumber함수를 실행해서 return
+number를 받지는 않습니다. 중요한 개념입니다. 그리고 conosole.log()문에서
+runner변수에 '()'를 붙혀 runner에 return 받은 innerGetNumber함수를 실행
+시킵니다. 그렇게되면 기존 렉시컬 스코프에 의해서 함수,변수를 선언할때 위치를
+상위 스코프를 지정했고 innerGetNumber함수가 getNumber값에 대해서 이미 가지고
+있었습니다. */
+
+

@@ -1,0 +1,18 @@
+<script>
+  /*크롬 브라우저에서 오픈 후 디버깅 기능을 통해서 코드를 살펴 봐야한다.
+  var number1에 디버깅 포인트 찍고나서 1단계씩 나아가야 하는 과정인데
+  1단계 시작하기 전에 이미 number1, number2, multiply함수, result1, result2는 
+  메모리 힙에 배정을 받은 다음에 실행이 시작된다. 그러니 호이스팅 현상이 발생하는 것이다....
+  */
+  var number1 = 20;
+  var number2 = 30;
+
+  function multiply(x, y) {
+    var result = x * y;
+
+    return result;
+  }
+
+  var result1 = multiply(number1, number2);
+  var result2 = multiply(100, 200);
+</script>
